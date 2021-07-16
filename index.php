@@ -37,7 +37,7 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
 
         </ul>
         <div class="logo">
-            <img src="img/logoniminuto.png" alt="">
+            <img src="img/logopagina.png" alt="">
         </div>
     </nav>
 
@@ -98,7 +98,7 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
 
                 <div>
                     <label for="lastName">Segundo Nombre: </label><br>
-                    <input type="text" name="lastName" id="lastName" required autocomplete="off">
+                    <input type="text" name="lastName" id="lastName"autocomplete="off">
                 </div>
             </div>
 
@@ -110,24 +110,21 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
 
                 <div>
                     <label for="lastSurmane">Segundo Apellido: </label><br>
-                    <input type="text" name="lastSurmane" id="lastSurmane" required autocomplete="off">
+                    <input type="text" name="lastSurmane" id="lastSurmane" autocomplete="off">
                 </div>
             </div>
 
             <div class="gridone">
-                <div class="celular">
-                    <label for="celular">Celular: </label><br>
-                    <input type="number" name="celular" id="celular" required autocomplete="off">
-                </div>
-
                 <div>
                     <label for="email">* Correo Electronico: </label><br>
-                    <input type="email" name="email" id="email" required autocomplete="off">
+                    <input type="email" name="email" id="email"  autocomplete="off">
                 </div>
+                <div class="celular">
+                    <label for="celular">Celular: </label><br>
+                    <input type="number" name="celular" id="celular"  autocomplete="off">
+                </div>
+
             </div>
-
-           
-
 
 
             <div class="enviar">
