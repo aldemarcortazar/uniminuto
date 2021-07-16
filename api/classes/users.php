@@ -25,6 +25,7 @@ class User extends Connection{
         $ok = mysqli_stmt_bind_param($query, 'iisssssssii', $doc, $idTipDoc, $name, $lastName, $surname, $lastSurname, $dateBirth,$mobile, $email, $idArea, $idTypeUser);
         $ok = mysqli_stmt_execute($query);
 
+        
         $mail = new PHPMailer(true);
         $mail->SMTPOptions = array(
             'ssl' => array(
@@ -42,7 +43,7 @@ class User extends Connection{
             $mail->Username   = 'danisalazar1478@gmail.com';                     //SMTP username
             $mail->Password   = 'batman1234567';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above - TCP Protocolo para que lleguen todos los segmentos correctamente
 
             //Recipients
             $mail->setFrom('danisalazar1478@gmail.com', 'Codigo QR');
@@ -116,7 +117,7 @@ class User extends Connection{
                         </div><br>
                     </div>
                     <div class="info">
-                        <p>Este email estaba dirigido a '.$name.' '.$lastName.' '.$surname.' '.$lastSurname.'   con fines educativos para el desarrollo de la prueba practica propuesta por el ingeniero Germán Montes.</p>
+                        <p>Este email esta dirigido a '.$name.' '.$lastName.' '.$surname.' '.$lastSurname.'   con fines educativos para el desarrollo de la prueba practica propuesta por el ingeniero Germán Montes.</p>
                     </div>
                 </div>
             </body>

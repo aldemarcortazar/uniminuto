@@ -31,6 +31,31 @@
     font-size: 18px;
 
 }
+.oculto{
+    background-color: rgba(0, 0, 0, 0.664);
+    z-index: 999;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.oculto img{
+    z-index: 1000;
+    width: 5rem;
+    height: 5rem;
+}
+
+.oculto.active{
+    opacity: 1;
+    pointer-events: auto;
+}
 
 .logo{
     width: 100%;
