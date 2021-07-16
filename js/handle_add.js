@@ -1,24 +1,13 @@
 import { ajax } from "./ajax.js";
 
 const handleAdd = (e) => {
-    data={
-        documento: e.target.docuumento.value,
-        idTipDoc: e.target.idTipDoc.value,
-        name:e.target.name.value,
-        lastName:e.target.lastName.value,
-        surName:e.target.surname.value,
-        lastSurname:e.target.lasSurName.value,
-        dateBirth:e.target.dateBirth.value,
-        mobile:e.target.mobile.value,
-        email:e.target.email.value,
-        idArea:e.target.idArea.value,
-        idTipUser:e.target.idTipUser,
-    };
+    console.log(e.target);
+    const data = new FormData(e.target);
     ajax({
-        url: '',
+        url: 'api/api/user.php',
         method: 'POST',
         data,
-        cbSuccess: ( { data:datos } ) => {
+        cbSuccess: ( datos ) => {
             Swal.fire({
                 title: 'Exito!',
                 text: datos.statusText,

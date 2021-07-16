@@ -6,8 +6,9 @@ switch($_SERVER['REQUEST_METHOD']){
     case 'GET':
         break;
     case 'POST':
+        // $_POST = json_decode(file_get_contents('php://input'), true);
         $user = new User();
-        $addUser = $user->addUser($_POST['doc'], $_POST['idTipDoc'], $_POST['name'], $_POST['lastName'], $_POST['surname'], $_POST['lastSurname'], $_POST['dateBirth'], $_POST['idArea'], $_POST['idTypeUser']);
+        $addUser = $user->addUser($_POST['numDocu'], $_POST['tipDocu'], $_POST['nombre'], $_POST['lastName'], $_POST['surmane'], $_POST['lastSurmane'], $_POST['fechan'], $_POST['celular'], $_POST['email'], $_POST['idArea'], $_POST['tipUser']);
         $res ;
         if( $addUser ){
             $res = array(
@@ -22,6 +23,7 @@ switch($_SERVER['REQUEST_METHOD']){
                 'statusText' => 'no se puede agregar el usuario intente nuevamente'
             );
         }
+        
         echo json_encode($res);
         break;
 }
