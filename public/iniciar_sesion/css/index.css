@@ -209,18 +209,29 @@ label{
 
 /*tabla pagina admin*/
 
-#container{
+.containesr{
     overflow-y: scroll;
     margin-top: 20px;
     
     
 }
 
+#excel{
+    cursor: pointer;
+    margin: 2% auto 0 auto;
+}
+
+#excel i{
+    color: #23822b;
+}
+
 table{
     border-collapse: collapse;
+    width: 100%;
 
 }
  th,  td {
+    padding:0.5%;
     height: 20px;
     text-align: center;
     font-size: 11px;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
+    <title>Reportes</title>
     <link rel="stylesheet" href="../../iniciar_sesion/css/index.css">
     <link rel="shortcut icon" href="../../../img/logoniminuto.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap" rel="stylesheet">
@@ -22,20 +22,14 @@
     </nav>
 
     <main class="container">
-        <h2>Bienvenido, administrador</h2>
+        <h1>Reporte de Entradas y Salidas</h1>
 
-        <div id="reader"></div>
-
-        <div id="container">
-            <table>
+            <table id="tabla">
                 <thead>
                     <tr>
                         <th>Documento</th>
                         <th>Tipo de Documento</th>
-                        <th>Primer Nombre</th>
-                        <th>Segundo Nombre</th>
-                        <th>Primer Apellido</th>
-                        <th>Segundo Apellido</th>
+                        <th>Nombre Completo</th>
                         <th>Fecha de nacimiento</th>
                         <th>Celular</th>
                         <th>Email</th>
@@ -45,13 +39,20 @@
                         <th>Fecha y hora de salida</th>
                     </tr>
                 </thead>
-                <tbody id="user_info">
+
+                <tbody class="containesr" id="user_info">
                     
                 </tbody>
             </table>
+            
+        <div id="excel" class="btn btn-outline-success btnExcel" onclick="exportTableToExcel('tabla', 'REPORTE_DE_ENTREDAS_Y_SALIDAS_<?php echo date('d_m_Y');?>')" >
+                Exportar Excel <i class="fas fa-file-excel"></i>
         </div>
 
+
     </main>
+
+    
 
     <script src="../../iniciar_sesion/scripts/html5-qrcode.min.js"></script>
     <script src="../../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
