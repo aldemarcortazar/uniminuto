@@ -54,6 +54,7 @@
     </main>
 
     <script src="../../iniciar_sesion/scripts/html5-qrcode.min.js"></script>
+    <script src="../../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="library/jquery-3.6.0.min.js"></script>
     <script src="scripts/admin.js"></script>
     <script src="scripts/scanner.js"></script>
