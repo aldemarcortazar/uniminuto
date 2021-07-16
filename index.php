@@ -8,7 +8,7 @@ $tipDocu= "SELECT * FROM type_doc";
 $query = mysqli_query($conexion->connection,$tipDocu);
 
 //tipo de usuario
-$tipUser= "SELECT * FROM type_user";
+$tipUser= "SELECT * FROM type_user where id_type_user > 1";
 $query2 = mysqli_query($conexion->connection,$tipUser);
 
 //area 
@@ -30,6 +30,9 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
 
 </head>
 <body>
+    <div class="oculto" id="oculto">
+        <img src="./img/loader.svg" alt="Cargando" >
+    </div>
     <nav id="menu-navegacion">
         <ul class="navegacion">
             <li><a href="public/iniciar_sesion/index.html">INICIO</a></li>
