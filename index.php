@@ -46,8 +46,8 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
         <form id="formRegister">
             <div class="griddos">
                 <div>
-                    <label for="tipDocu">* Tipo de Documento: </label><br>
-                    <select name="tipDocu" id="tipDocu" >
+                    <label for="tipDocu">Tipo de Documento * </label><br>
+                    <select name="tipDocu" id="tipDocu" required >
                         <option value="0"></option>
                         <?php foreach ($query as $tipDocu): ?>
                         <option value="<?php echo $tipDocu['id_type_doc'] ?> "><?php echo $tipDocu['name_type_doc'] ?></option>
@@ -58,8 +58,8 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
                 
 
                 <div>
-                    <label for="tipUser">* Tipo de Usuario: </label><br>
-                    <select name="tipUser" id="tipUser" >
+                    <label for="tipUser">Tipo de Usuario * </label><br>
+                    <select name="tipUser" id="tipUser" required>
                         <option value="0"></option>
                         <?php foreach ($query2 as $tipUser): ?>
                         <option value="<?php echo $tipUser['id_type_user'] ?> "><?php echo $tipUser['name_type_user'] ?></option>
@@ -68,8 +68,9 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
                 </div>
 
                 <div>
-                    <label for="area">* Área </label><br>
-                    <select name="idArea" id="area" class="area">
+                    <label for="area">Área *</label><br>
+                    <select name="idArea" id="area" class="area" required>
+                        <option value="0"></option>
                         <?php foreach($query3 as $area) :?>
                         <option value="<?php echo $area['id_area'];?>"><?php echo $area['name_area']; ?></option>
                         <?php endforeach; ?>
@@ -81,51 +82,49 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
             <div class="gridone">
                 
                 <div>
-                    <label for="numDocu">* Número de Documento: </label><br>
+                    <label for="numDocu">Número de Documento *</label><br>
                     <input type="number" name="numDocu" id="numDocu" required autocomplete="off">
                 </div>
                 <div>
-                    <label for="fechan">Fecha de Nacimiento</label><br>
+                    <label for="fechan">Fecha de Nacimiento </label><br>
                     <input type="date" name="fechan" id="fechan" class="fachan" autocomplete="off">
                 </div>
             </div>
            
             <div class="gridone">
                 <div>
-                    <label for="nombre">* Primer Nombre: </label><br>
+                    <label for="nombre">Primer Nombre * </label><br>
                     <input type="text" name="nombre" id="nombre" required autocomplete="off">
                 </div>
 
                 <div>
-                    <label for="lastName">Segundo Nombre: </label><br>
+                    <label for="lastName">Segundo Nombre </label><br>
                     <input type="text" name="lastName" id="lastName"autocomplete="off">
                 </div>
             </div>
 
             <div class="gridone">
                 <div>
-                    <label for="surmane">* Primer Apellido: </label><br>
+                    <label for="surmane">Primer Apellido * </label><br>
                     <input type="text" name="surmane" id="surmane" required autocomplete="off">
                 </div>
 
                 <div>
-                    <label for="lastSurmane">Segundo Apellido: </label><br>
+                    <label for="lastSurmane">Segundo Apellido </label><br>
                     <input type="text" name="lastSurmane" id="lastSurmane" autocomplete="off">
                 </div>
             </div>
 
             <div class="gridone">
                 <div>
-                    <label for="email">* Correo Electronico: </label><br>
-                    <input type="email" name="email" id="email"  autocomplete="off">
+                    <label for="email">Correo Electronico *</label><br>
+                    <input type="email" name="email" id="email" required autocomplete="off" re>
                 </div>
                 <div class="celular">
-                    <label for="celular">Celular: </label><br>
+                    <label for="celular">Celular </label><br>
                     <input type="number" name="celular" id="celular"  autocomplete="off">
                 </div>
-
             </div>
-
 
             <div class="enviar">
                 <input type="submit" value="Enviar">
