@@ -8,7 +8,7 @@ function onScanSuccess(decodedText, decodedResult) {
     // Manejar en condición de éxito con el texto decodificado o el resultado.
     // console.log(`Scan result: ${decodedText}`, decodedResult);
     let resultado = `${decodedText}`;
-    validarInicioSesion(resultado)
+    cerrarSesion(resultado)
     // ...
     html5QrcodeScanner.clear();
     // ^ Detiene el escaner una vez se complete el escaneo
@@ -21,9 +21,9 @@ function onScanError(errorMessage) {
 
 html5QrcodeScanner.render(onScanSuccess, onScanError);
 
-function validarInicioSesion(codigo) {
+function cerrarSesion(codigo) {
 
-    fetch('include/validarInicio.php', {
+    fetch('include/registrarSalida.php', {
         method: 'POST', 
         body: JSON.stringify(codigo),
     })
@@ -31,20 +31,9 @@ function validarInicioSesion(codigo) {
         .then( data => {
             if(data === 0) {
                 alert("No se encontró ningún usuario")
-                window.location.reload()
+                // window.location.reload()
             } else {
-                localStorage.setItem("user", JSON.stringify(data))
-                let datos = parseInt(data.id_type_user)
-
-                switch(datos) {
-                    case 1: 
-                        window.location.href = "../usuarios/admin/admin.php"
-                        break
-                    case 2:
-                        window.location.href = "../usuarios/admin/profesor.php"
-                        break
-                }
-
+                window.location.href = "../../../index.php";
             }
         } )
         .catch(err => {
