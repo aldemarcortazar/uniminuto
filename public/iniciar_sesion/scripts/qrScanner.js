@@ -34,17 +34,42 @@ function validarInicioSesion(codigo) {
                 window.location.reload()
             } else {
                 localStorage.setItem("user", JSON.stringify(data))
-                let datos = parseInt(data.id_type_user)
+                // let datos = parseInt(data.id_type_user)
 
-                switch(datos) {
-                    case 1: 
-                        window.location.href = "../usuarios/admin/admin.php"
-                        break
-                    case 2:
-                        window.location.href = "../usuarios/admin/profesor.php"
-                        break
+                if(data == "Ok") {
+                    Swal.fire({
+                        title: 'Exito!',
+                        text: "Registrado correctamente",
+                        icon: 'success',
+                        confirmButtonText: 'ok'
+                    });
+
+                    setTimeout(() =>{
+                        location.reload();
+                    },1300);
+                } else if(data == "Error"){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: "Error al registar",
+                        icon: 'error',
+                        confirmButtonText: 'ok'
+                    });
+
+                    setTimeout(() =>{
+                        location.reload();
+                    },1300);
+                } else if(data == "Ok2") {
+                    Swal.fire({
+                        title: 'Exito!',
+                        text: "Salida exitosa",
+                        icon: 'success',
+                        confirmButtonText: 'ok'
+                    });
+
+                    setTimeout(() =>{
+                        location.reload();
+                    },1300);
                 }
-
             }
         } )
         .catch(err => {

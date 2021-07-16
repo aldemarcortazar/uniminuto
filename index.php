@@ -37,6 +37,8 @@ $query3 = mysqli_query($conexion->connection, $tipArea);
         <ul class="navegacion">
             <li><a href="public/iniciar_sesion/index.html">INICIO</a></li>
             <li><a href="index.php">REGISTRO</a></li>
+            <li><a href="public/usuarios/admin/admin.php">REPORTE</a></li>
+
 
         </ul>
         <div class="logo">
